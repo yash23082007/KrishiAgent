@@ -23,31 +23,31 @@ const SIMULATION_CROPS = [
   {
     name: "Wheat Rust",
     value: "wheat",
-    img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=600",
+    img: "/images/wheat_rust.png",
     desc: "Orange-brown powdery pustules covering leaf stems."
   },
   {
     name: "Rice Blight",
     value: "rice",
-    img: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&q=80&w=600",
+    img: "/images/rice_blight.png",
     desc: "Yellow-white drying leaf tips and stripes."
   },
   {
     name: "Cotton Leaf Curl",
     value: "cotton",
-    img: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&q=80&w=600",
+    img: "/images/cotton_curl.png",
     desc: "Upward curling and thickening of leaf veins."
   },
   {
     name: "Sugarcane Red Rot",
     value: "sugarcane",
-    img: "https://images.unsplash.com/photo-1594024369408-ff157fbfa375?auto=format&fit=crop&q=80&w=600",
+    img: "/images/sugarcane_redrot.png",
     desc: "Internal stem rotting with a distinct sour odor."
   },
   {
     name: "Tomato Blight",
     value: "tomato",
-    img: "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&q=80&w=600",
+    img: "/images/tomato_blight.png",
     desc: "Concentric target board pattern black leaf rings."
   }
 ];
