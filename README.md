@@ -3,6 +3,10 @@
 
 KrishiAgent is an autonomous agricultural diagnostic system designed for Indian farmers. By providing a "Zero UI" interface, farmers can simply take a photo of a diseased crop and send it over WhatsApp. In return, they receive an immediate, dialect-aware diagnostic voice note detailing the disease, spray feasibility based on real-time local weather, and a net-cost economic advisory featuring local dealer locations and active government subsidies.
 
+## 📺 Live End-to-End Simulation Demo
+
+![KrishiAgent Pipeline Demo](krishiagent_demo.webp)
+
 ---
 
 ## 🏗️ Architecture & Agent Pipeline
