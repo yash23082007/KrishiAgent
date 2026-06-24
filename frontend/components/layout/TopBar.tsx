@@ -1,10 +1,33 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Wifi, ShieldAlert, Cpu } from "lucide-react";
+import { Wifi, Cpu, Sun, Moon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function TopBar() {
   const pathname = usePathname();
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    setTheme(savedTheme);
+    if (savedTheme === "light") {
+      document.documentElement.classList.add("light-theme");
+    } else {
+      document.documentElement.classList.remove("light-theme");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    if (newTheme === "light") {
+      document.documentElement.classList.add("light-theme");
+    } else {
+      document.documentElement.classList.remove("light-theme");
+    }
+  };
 
   // Get human-readable page name
   const getPageTitle = () => {
@@ -24,6 +47,15 @@ export default function TopBar() {
 
       {/* Integration Badges */}
       <div className="flex items-center gap-4">
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="p-2 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors cursor-pointer"
+          title="Toggle Light/Dark Theme"
+        >
+          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+        </button>
+
         {/* API Engine Badge */}
         <div className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-full px-3.5 py-1.5 text-xs text-zinc-300">
           <Cpu size={14} className="text-green-500 animate-pulse" />
@@ -45,3 +77,4 @@ export default function TopBar() {
     </header>
   );
 }
+
