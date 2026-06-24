@@ -64,24 +64,24 @@ The system coordinates agents asynchronously to minimize latency and ensure resu
 
 ```mermaid
 graph TD
-    Farmer[Farmer on WhatsApp] -->|Sends image / location| Webhook[FastAPI Webhook /webhook]
+    Farmer["Farmer on WhatsApp"] -->|"Sends image / location"| Webhook["FastAPI Webhook /webhook"]
     
-    subgraph Parallel Stage
-        Webhook -->|Image URL| VisionAgent[Vision Agent: Pathologist]
-        Webhook -->|Lat, Lon| ClimateAgent[Climate Agent: Meteorologist]
+    subgraph Parallel_Stage ["Parallel Stage"]
+        Webhook -->|"Image URL"| VisionAgent["Vision Agent: Pathologist"]
+        Webhook -->|"Lat, Lon"| ClimateAgent["Climate Agent: Meteorologist"]
     end
     
-    VisionAgent -->|Disease & treatment keywords| EconAgent[Economic Agent: Market Advisor]
-    ClimateAgent -->|Weather safety check| EconAgent
+    VisionAgent -->|"Disease & treatment keywords"| EconAgent["Economic Agent: Market Advisor"]
+    ClimateAgent -->|"Weather safety check"| EconAgent
     
-    EconAgent -->|Net cost & dealer info| VoiceAgent[Voice Agent: Linguist]
+    EconAgent -->|"Net cost & dealer info"| VoiceAgent["Voice Agent: Linguist"]
     
-    VoiceAgent -->|TTS Generation .ogg| AudioUpload[Audio Upload Cloudinary/Local]
-    AudioUpload -->|Public URL| WhatsAppAPI[Meta WhatsApp API]
+    VoiceAgent -->|"TTS Generation (.ogg)"| AudioUpload["Audio Upload Cloudinary/Local"]
+    AudioUpload -->|"Public URL"| WhatsAppAPI["Meta WhatsApp API"]
     
-    WhatsAppAPI -->|Voice Note & Text Advisory| Farmer
-    Webhook -->|Saves telemetry| DB[(SQLite / Supabase DB)]
-    DB -->|Polled updates| Dash[Next.js Dashboard Feed]
+    WhatsAppAPI -->|"Voice Note & Text Advisory"| Farmer
+    Webhook -->|"Saves telemetry"| DB[("SQLite / Supabase DB")]
+    DB -->|"Polled updates"| Dash["Next.js Dashboard Feed"]
 ```
 
 ### Execution Workflow:
