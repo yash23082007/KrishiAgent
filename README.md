@@ -8,7 +8,7 @@ Indian agriculture loses over **₹50,000 crore annually** to crop diseases. The
 
 ## 📺 Live End-to-End Simulation Demo
 
-![KrishiAgent Pipeline Demo](krishiagent_demo.webp)
+![KrishiAgent Pipeline Demo](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/krishiagent_demo.webp)
 
 ---
 
@@ -17,13 +17,13 @@ Indian agriculture loses over **₹50,000 crore annually** to crop diseases. The
 To achieve high adoption in rural India, agricultural advice must be delivered in the farmer's native tongue and in a format that requires zero digital literacy. KrishiAgent is designed specifically for this workflow.
 
 ### 📱 Multilingual WhatsApp Chat mockups (Hindi, Telugu, Urdu)
-![KrishiAgent Multilingual Interface Mockup](multilingual_mockup.png)
+![KrishiAgent Multilingual Interface Mockup](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/multilingual_mockup.png)
 
 ### 🌾 How Rural Farmers Use It (Step-by-Step User Flow)
 
 | **Step 1: Upload Crop Photo** | **Step 2: Share Geolocation** | **Step 3: Receive Advisory Voice Note** |
 | :---: | :---: | :---: |
-| ![Step 1: Upload Crop Photo](user_flow_step1.png) | ![Step 2: Share Geolocation](user_flow_step2.png) | ![Step 3: Receive Voice Note](user_flow_step3.png) |
+| ![Step 1: Upload Crop Photo](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/user_flow_step1.png) | ![Step 2: Share Geolocation](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/user_flow_step2.png) | ![Step 3: Receive Voice Note](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/user_flow_step3.png) |
 | Farmer opens WhatsApp and texts a photo of the infected crop leaf to KrishiAgent. | Farmer shares their live location pin using the standard WhatsApp attachment menu. | KrishiAgent responds in under 15s with a localized text advisory and an audio voice note. |
 
 ---
@@ -52,7 +52,7 @@ To achieve high adoption in rural India, agricultural advice must be delivered i
 KrishiAgent implements a **Zero-UI** approach. The user interface is simply sending a photo on WhatsApp. Behind the scenes, an orchestrated cluster of four autonomous agents handles the complex backend routing:
 
 ### 📱 Zero-UI WhatsApp Interface Mockup
-![WhatsApp Farmer Interface Mockup](whatsapp_mockup.png)
+![WhatsApp Farmer Interface Mockup](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/whatsapp_mockup.png)
 
 1. **Vision Agent (Agronomist):** Analyzes the image payload using Gemini 1.5 Flash (or GPT-4o-Mini), identifies the crop, detects the specific disease/pest, and queries the knowledge base for chemical countermeasures.
 2. **Climate Agent (Meteorologist):** Extracts location coordinates and fetches hyper-local weather APIs (Open-Meteo). It dynamically enforces safety rules (e.g., *"Halt pesticide: wind speed is 18 km/h, causing spray drift"* or *"Rain forecast in 2 hours will wash away the chemical"*).
