@@ -24,6 +24,9 @@ Indian agriculture loses over **₹50,000 crore annually** to crop diseases. The
 
 KrishiAgent implements a **Zero-UI** approach. The user interface is simply sending a photo on WhatsApp. Behind the scenes, an orchestrated cluster of four autonomous agents handles the complex backend routing:
 
+### 📱 Zero-UI WhatsApp Interface Mockup
+![WhatsApp Farmer Interface Mockup](whatsapp_mockup.png)
+
 1. **Vision Agent (Agronomist):** Analyzes the image payload using Gemini 1.5 Flash (or GPT-4o-Mini), identifies the crop, detects the specific disease/pest, and queries the knowledge base for chemical countermeasures.
 2. **Climate Agent (Meteorologist):** Extracts location coordinates and fetches hyper-local weather APIs (Open-Meteo). It dynamically enforces safety rules (e.g., *"Halt pesticide: wind speed is 18 km/h, causing spray drift"* or *"Rain forecast in 2 hours will wash away the chemical"*).
 3. **Economic Agent (Market Advisor):** Performs RAG (Retrieval-Augmented Generation) on local supplier databases and active government subsidy databases to calculate the lowest net cost and direct benefits for the farmer.
