@@ -1,0 +1,21 @@
+Namaste {{ farmer_name or "kisan bhai" }}.
+
+Your {{ crop }} plant has {{ disease }} with {{ severity }} severity.
+
+{% if weather_safe %}
+Weather is good for treatment right now.
+{% else %}
+Wait. {{ weather_reason or "Rain or strong wind is expected." }} Next safe spray window is {{ safe_spray_window or "tomorrow morning" }}.
+{% endif %}
+
+Use {{ treatment_name }} — dosage is {{ treatment_dose }}.
+Net cost: approximately ₹{{ net_cost }} after government subsidy.
+
+Buy from {{ dealer_name }}, {{ dealer_distance }}km from you. 
+Phone: {{ dealer_phone }}.
+
+{% if organic_alternatives %}
+Organic option: {{ organic_alternatives[0] }}.
+{% endif %}
+
+Act within {{ urgency or "48 hours" }}. Good luck with your harvest.

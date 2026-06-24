@@ -1,0 +1,101 @@
+[
+  {
+    "crop": "wheat",
+    "disease_name": "stem rust",
+    "scientific_name": "Puccinia graminis",
+    "local_names": {
+      "marwari": "गेहूं रो रतवा रोग",
+      "hindi": "गेहूं का गेरुआ रोग"
+    },
+    "symptoms": "Elongated, reddish-brown pustules on stems and leaves. Stems become weak and lodge easily.",
+    "treatment_text": "Apply chemical fungicide like Propiconazole 25% EC at 2 ml/liter or Tebuconazole 250 EC at 1.5 ml/liter.",
+    "treatments": [
+      {"name": "propiconazole", "dosage": "2 ml per liter", "type": "chemical"},
+      {"name": "tebuconazole", "dosage": "1.5 ml per liter", "type": "chemical"},
+      {"name": "neem oil", "dosage": "5 ml per liter", "type": "organic"}
+    ],
+    "severity_scale": "Orange powder rubs off on fingers. High severity means stem coverage > 50%.",
+    "image_urls": [],
+    "source": "Indian Agricultural Research Institute (IARI)",
+    "verified": true
+  },
+  {
+    "crop": "rice",
+    "disease_name": "bacterial leaf blight",
+    "scientific_name": "Xanthomonas oryzae",
+    "local_names": {
+      "marwari": "चावल रो झुलसा रोग",
+      "hindi": "धान का जीवाणु झुलसा रोग"
+    },
+    "symptoms": "Water-soaked stripes on leaf blades, turning yellow-to-white from the tips downwards.",
+    "treatment_text": "Spray Streptocycline 15g + Copper Oxychloride 500g in 200 liters of water per acre.",
+    "treatments": [
+      {"name": "streptocycline", "dosage": "0.5g per liter", "type": "chemical"},
+      {"name": "copper oxychloride", "dosage": "3g per liter", "type": "chemical"},
+      {"name": "pseudomonas fluorescens", "dosage": "5g per liter", "type": "organic"}
+    ],
+    "severity_scale": "Wavy gray-brown stripe lesions running down leaf edges.",
+    "image_urls": [],
+    "source": "Central Rice Research Institute (CRRI)",
+    "verified": true
+  },
+  {
+    "crop": "cotton",
+    "disease_name": "leaf curl virus",
+    "scientific_name": "Cotton leaf curl virus (CLCuV)",
+    "local_names": {
+      "marwari": "कपास रो मरोड़िया रोग",
+      "hindi": "कपास का पत्ती मरोड़ रोग"
+    },
+    "symptoms": "Upward curling of leaf margins, thickening of leaf veins, and visual stunted growth.",
+    "treatment_text": "Target the whitefly vector. Spray Imidacloprid 17.8% SL at 0.5 ml/liter or Thiamethoxam 25 WG at 0.3g/liter.",
+    "treatments": [
+      {"name": "imidacloprid", "dosage": "0.5 ml per liter", "type": "chemical"},
+      {"name": "thiamethoxam", "dosage": "0.3g per liter", "type": "chemical"},
+      {"name": "neem seed kernel extract", "dosage": "5 ml per liter", "type": "organic"}
+    ],
+    "severity_scale": "Cup-like leaf structures or visual leaf crumpling on young shoots.",
+    "image_urls": [],
+    "source": "Central Institute for Cotton Research (CICR)",
+    "verified": true
+  },
+  {
+    "crop": "sugarcane",
+    "disease_name": "red rot",
+    "scientific_name": "Colletotrichum falcatum",
+    "local_names": {
+      "marwari": "गन्ना रो लाल सड़न",
+      "hindi": "गन्ने का लाल सड़न रोग"
+    },
+    "symptoms": "Third or fourth leaves wither. Splitting the cane longitudinally reveals red pith with white spots and a sour alcoholic odor.",
+    "treatment_text": "Uproot affected stools and spray Carbendazim 50% WP at 2g/liter on surrounding soils.",
+    "treatments": [
+      {"name": "carbendazim", "dosage": "2g per liter", "type": "chemical"},
+      {"name": "trichoderma", "dosage": "5g per liter", "type": "organic"}
+    ],
+    "severity_scale": "Inner stalk tissue is dull red with horizontal white spots.",
+    "image_urls": [],
+    "source": "Sugarcane Breeding Institute (SBI)",
+    "verified": true
+  },
+  {
+    "crop": "tomato",
+    "disease_name": "early blight",
+    "scientific_name": "Alternaria solani",
+    "local_names": {
+      "marwari": "टमाटर रो झुलसा रोग",
+      "hindi": "टमाटर का अगेती झulsa रोग"
+    },
+    "symptoms": "Small brown/black spots on older leaves expanding with concentric rings (target board pattern).",
+    "treatment_text": "Spray Mancozeb 75% WP at 2.5g/liter or Chlorothalonil 75% WP at 2g/liter.",
+    "treatments": [
+      {"name": "mancozeb", "dosage": "2.5g per liter", "type": "chemical"},
+      {"name": "chlorothalonil", "dosage": "2g per liter", "type": "chemical"},
+      {"name": "copper fungicide", "dosage": "2g per liter", "type": "organic"}
+    ],
+    "severity_scale": "Concentric dark brown target spots starting on lower leaves.",
+    "image_urls": [],
+    "source": "Indian Institute of Horticultural Research (IIHR)",
+    "verified": true
+  }
+]

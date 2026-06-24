@@ -1,0 +1,47 @@
+[
+  {
+    "scheme_name": "Rajasthan Pesticide Cost Subsidy Scheme",
+    "scheme_code": "RJ-PEST-50",
+    "level": "state",
+    "state": "Rajasthan",
+    "eligible_crops": ["wheat", "barley", "maize", "mustard", "pulses"],
+    "eligible_inputs": ["propiconazole", "tebuconazole", "carbendazim", "mancozeb", "fungicide"],
+    "benefit_type": "50% cost subsidy on registered plant medicines",
+    "amount_inr": 500,
+    "income_limit": 250000,
+    "application_url": "https://rajkisan.rajasthan.gov.in",
+    "documentation": ["Bhamashah/Jan Aadhaar Card", "Land Jamabandi copy", "Retail Bill Receipt"],
+    "active": true,
+    "valid_until": "2027-03-31"
+  },
+  {
+    "scheme_name": "National Food Security Mission (NFSM) Inputs Program",
+    "scheme_code": "NFSM-INPUT",
+    "level": "central",
+    "state": null,
+    "eligible_crops": ["rice", "wheat", "pulses", "coarse cereals"],
+    "eligible_inputs": ["streptocycline", "copper oxychloride", "bactericide", "trichoderma"],
+    "benefit_type": "50% cost subsidy or up to Rs 300 per hectare",
+    "amount_inr": 300,
+    "income_limit": 500000,
+    "application_url": "https://nfsm.gov.in",
+    "documentation": ["Farmer Registration ID", "Land Ownership details"],
+    "active": true,
+    "valid_until": "2026-12-31"
+  },
+  {
+    "scheme_name": "Integrated Pest Management (IPM) Scheme",
+    "scheme_code": "IPM-CENTRAL",
+    "level": "central",
+    "state": null,
+    "eligible_crops": ["cotton", "sugarcane", "paddy", "vegetables"],
+    "eligible_inputs": ["imidacloprid", "thiamethoxam", "neem oil", "insecticide", "yellow sticky traps"],
+    "benefit_type": "40% cost subsidy on approved bio-pesticides and systemic insecticides",
+    "amount_inr": 400,
+    "income_limit": 400000,
+    "application_url": "https://dacfw.nic.in",
+    "documentation": ["Aadhaar card", "Soil Health Card"],
+    "active": true,
+    "valid_until": "2027-09-30"
+  }
+]

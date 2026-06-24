@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Kisan Bhandar Sujangarh",
+    "phone": "+91-98765-43210",
+    "district": "Churu",
+    "state": "Rajasthan",
+    "latitude": 27.7011,
+    "longitude": 74.4712,
+    "specialty": "Pesticides & Seeds"
+  },
+  {
+    "name": "Marwar Agri Inputs, Ratangarh",
+    "phone": "+91-94140-12345",
+    "district": "Churu",
+    "state": "Rajasthan",
+    "latitude": 28.0823,
+    "longitude": 74.6190,
+    "specialty": "Subsidized Fertilisers"
+  },
+  {
+    "name": "Kalyan Krishi Kendra, Churu",
+    "phone": "+91-96543-21098",
+    "district": "Churu",
+    "state": "Rajasthan",
+    "latitude": 28.2936,
+    "longitude": 74.9649,
+    "specialty": "All Agriculture Products"
+  },
+  {
+    "name": "Salasar Seeds & Fertilizers",
+    "phone": "+91-99887-76655",
+    "district": "Churu",
+    "state": "Rajasthan",
+    "latitude": 27.7286,
+    "longitude": 74.7214,
+    "specialty": "Bio-inputs & Organic pesticides"
+  }
+]
