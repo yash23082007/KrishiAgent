@@ -6,12 +6,6 @@ Indian agriculture loses over **₹50,000 crore annually** to crop diseases. The
 
 ---
 
-## 📺 Live End-to-End Simulation Demo
-
-![KrishiAgent Pipeline Demo](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/krishiagent_demo.webp)
-
----
-
 ## 🌍 Multilingual Rural Impact: Breaking the Language & Literacy Barrier
 
 To achieve high adoption in rural India, agricultural advice must be delivered in the farmer's native tongue and in a format that requires zero digital literacy. KrishiAgent is designed specifically for this workflow.
