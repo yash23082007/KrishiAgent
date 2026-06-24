@@ -39,13 +39,19 @@ graph TD
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Technology Stack & AI Alignment
 
-* **Backend:** FastAPI, Python, Uvicorn, Asyncio
-* **LLM Engines:** Google Gemini 1.5 Flash (free tier)
-* **Frontend:** Next.js 14 (App Router), Leaflet.js (interactive outbreak mapping), TailwindCSS
-* **Database & Cache:** Supabase (PostgreSQL) / local SQLite fallback, Redis / local memory caching
-* **Third-Party APIs:** Open-Meteo (Weather), Nominatim OpenStreetMap (Reverse Geocoding), Cloudinary (Public audio hosting), Meta WhatsApp Cloud API
+KrishiAgent is built with a decoupled, state-of-the-art tech stack matching the criteria:
+
+* **LLM Core / Gemini:** Uses **Gemini 1.5 Flash** for rapid, cost-effective multimodal crop pathology analysis, dialect-accurate translation (Hindi, Marwari, Bhojpuri, Gujarati), and voice-friendly text construction.
+* **Agent Frameworks / CrewAI & Custom Orchestration:** Features **Custom AI Agents** written in Python using Asyncio for parallel execution of diagnostic and environmental pipelines. Includes built-in **CrewAI compatibility wrappers** (`get_crewai_agent()`) for enterprise multi-agent execution.
+* **Programming & UI:** Built end-to-end with **Python** (FastAPI backend) and **JavaScript / TypeScript** (Next.js 14 frontend dashboard & interactive map).
+* **APIs & Automation Platforms:** Automatically integrates:
+  * **Meta WhatsApp Cloud Business API Webhooks** for a Zero-UI messaging pipeline.
+  * **Open-Meteo API** for weather-feasibility validation loops.
+  * **Nominatim OpenStreetMap API** for reverse geocoding.
+  * **Cloudinary Media API** for automatic CDN-based public audio note hosting.
+* **Database & Vector Fallbacks:** Uses PostgreSQL (via Supabase) or local SQLite databases for storing farmer profiles, local supplier inventories, and government subsidy knowledge bases.
 
 ---
 
