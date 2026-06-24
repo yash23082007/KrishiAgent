@@ -1,6 +1,6 @@
 # KrishiAgent 🌾
 ### Autonomous Multi-Agent Farm Manager
-> **Agentic Arena Hackathon Submission** | *Zero-UI Approach to Multi-Agent Orchestration*
+> **Zero-UI Autonomous Multi-Agent Crop Diagnosis & Advisory System**
 
 Indian agriculture loses over **₹50,000 crore annually** to crop diseases. The failure to mitigate this isn't due to a lack of agritech apps; it's a massive UX and accessibility failure. KrishiAgent solves this by replacing the entire agritech app ecosystem with a single WhatsApp number. By simply sending a photo of a diseased crop, farmers receive an immediate, dialect-aware diagnostic voice note along with weather safety validations and economic advisories.
 
@@ -65,9 +65,9 @@ graph TD
 
 ---
 
-## 🛠️ Technology Stack & AI Alignment
+## 🛠️ Technology Stack & AI Orchestration
 
-KrishiAgent is built with a decoupled, state-of-the-art tech stack matching the hackathon criteria:
+KrishiAgent is built with a decoupled, state-of-the-art tech stack:
 
 * **LLM Core / Gemini:** Uses **Gemini 1.5 Flash** for rapid, cost-effective multimodal crop pathology analysis, dialect-accurate translation (Hindi, Marwari, Bhojpuri, Gujarati), and voice-friendly text construction.
 * **Agent Frameworks / CrewAI & Custom Orchestration:** Features **Custom AI Agents** written in Python using Asyncio for parallel execution. Includes built-in **CrewAI compatibility wrappers** (`get_crewai_agent()`) for enterprise multi-agent execution.
