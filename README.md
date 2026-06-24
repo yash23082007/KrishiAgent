@@ -105,6 +105,45 @@ KrishiAgent is built with a decoupled, state-of-the-art tech stack:
 
 ---
 
+## 📂 Project Directory Structure
+
+```text
+├── backend/                       # FastAPI Core Server
+│   ├── agents/                    # Specialized AI Agent Class definitions
+│   │   ├── vision_agent.py        # Pathologist Agent
+│   │   ├── climate_agent.py       # Meteorologist Agent
+│   │   ├── economic_agent.py      # Market Advisor Agent
+│   │   └── voice_agent.py         # Linguist Agent
+│   ├── db/                        # Database schemas and connections
+│   │   ├── queries.py             # SQLite/Supabase abstraction layer
+│   │   ├── redis_client.py        # In-memory session store
+│   │   └── supabase_client.py     # Remote PostgreSQL connection
+│   ├── knowledge_base/            # Seed data JSONs (subsidies, dealers, etc.)
+│   ├── models/                    # Pydantic schemas for verification
+│   ├── prompts/                   # Jinja2 text template & LLM prompt configs
+│   ├── tools/                     # Core system utilities & APIs
+│   │   ├── gemini_tool.py         # Google Gemini Vision API calls
+│   │   ├── weather_tool.py        # Open-Meteo REST Client
+│   │   └── bhashini_tool.py       # Translation & TTS interface
+│   ├── utils/                     # Helper modules (WhatsApp, Location reverse geocoding)
+│   ├── main.py                    # Server initialization script
+│   └── webhook.py                 # Inbound Meta Webhook router
+│
+├── frontend/                      # Next.js Dashboard App
+│   ├── app/                       # Operations panel & map routing
+│   │   ├── cases/                 # Case telemetry log view
+│   │   ├── map/                   # Leaflet outbreak map
+│   │   └── page.tsx               # Main cockpit and WhatsApp Simulator
+│   ├── components/                # Interactive React components
+│   └── public/images/             # Realistic disease Leaf sample images
+│
+└── scripts/                       # Database seeding & offline pipeline testing
+    ├── seed_knowledge_base.py     # Seeding SQLite with initial lists
+    └── test_pipeline_local.py     # Simulating CLI multi-agent loops
+```
+
+---
+
 ## 📈 Impact Metrics
 
 * **Zero UI / Zero Onboarding:** Bypasses the digital literacy barrier entirely by using WhatsApp voice and images. No app store installation or complex accounts required.
@@ -116,26 +155,36 @@ KrishiAgent is built with a decoupled, state-of-the-art tech stack:
 ## ⚙️ Getting Started
 
 ### 1. Pre-requisites & Environment Setup
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory. Copy the keys below or use the detailed table to configure mock/live settings:
 
 ```env
-# Google Gemini Credentials (required for vision analysis & translation)
+# API Credentials
 GEMINI_API_KEY=your_gemini_api_key
 
-# Supabase (optional, defaults to local SQLite db 'local.db')
+# Database configuration
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_KEY=your_supabase_anon_key
 
-# Audio Hosting (optional, required for sending real voice notes to Meta WhatsApp API)
+# Media Uploads CDN
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
-# Meta WhatsApp Cloud API (optional, falls back to local CLI mock logs)
+# WhatsApp Webhook Integration
 WHATSAPP_TOKEN=your_meta_access_token
 WHATSAPP_PHONE_NUMBER_ID=your_whatsapp_phone_number_id
 WHATSAPP_VERIFY_TOKEN=krishi_verify_token
 ```
+
+#### Environment Variable Configuration Reference:
+
+| Variable Name | Purpose | Live Functionality | Local/Mock Fallback Behavior |
+| :--- | :--- | :--- | :--- |
+| `GEMINI_API_KEY` | Diagnostic & translation | Connects to `gemini-1.5-flash` model for diagnostics and dialect translations. | Falls back to static dictionary mapping (randomized mock results for simulator). |
+| `SUPABASE_URL` / `SUPABASE_KEY` | Remote DB storage | Saves case logs and knowledge bases to cloud Supabase (PostgreSQL). | Automatically defaults to local SQLite database file `backend/db/local.db`. |
+| `CLOUDINARY_CLOUD_NAME` / `_KEY` / `_SECRET` | Audio Hosting CDN | Uploads OGG voice files to Cloudinary for public audio links. | Saves files in `/static/audio/` and returns local relative links. |
+| `WHATSAPP_TOKEN` / `_PHONE_NUMBER_ID` | Meta Business API | Sends live WhatsApp text/audio messages to the farmer's phone. | Prints mock log strings to FastAPI terminal (`[MOCK WHATSAPP SEND_AUDIO]`). |
+| `WHATSAPP_VERIFY_TOKEN` | Webhook verification | Meta calls your `/webhook` GET route using this verification token. | Defaults to `"krishi_verify_token"` if not specified. |
 
 ### 2. Backend Setup & Run
 Create a virtual environment, install dependencies, seed the database, and start the FastAPI server:
