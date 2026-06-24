@@ -19,11 +19,14 @@ To achieve high adoption in rural India, agricultural advice must be delivered i
 ### 📱 Multilingual WhatsApp Chat mockups (Hindi, Telugu, Urdu)
 ![KrishiAgent Multilingual Interface Mockup](multilingual_mockup.png)
 
-### 🌾 How Rural Farmers Use It
-1. **Zero Text Entry:** A farmer opens WhatsApp, takes a photo of a diseased leaf, and sends it.
-2. **Simple Geolocation sharing:** If they want local supplier routing, they share their location pin (via WhatsApp's standard location share button).
-3. **Dialect Voice Notes:** In under 15 seconds, the farmer receives an audio voice note in their native regional dialect (e.g., **Hindi**, **Telugu**, **Urdu**, or specific dialects like **Marwari** or **Bhojpuri**).
-4. **Village-Elder Tone:** The synthesized voice note is crafted with a warm, respectful, and trusted agricultural advisor tone rather than a cold robotic readout.
+### 🌾 How Rural Farmers Use It (Step-by-Step User Flow)
+
+| **Step 1: Upload Crop Photo** | **Step 2: Share Geolocation** | **Step 3: Receive Advisory Voice Note** |
+| :---: | :---: | :---: |
+| ![Step 1: Upload Crop Photo](user_flow_step1.png) | ![Step 2: Share Geolocation](user_flow_step2.png) | ![Step 3: Receive Voice Note](user_flow_step3.png) |
+| Farmer opens WhatsApp and texts a photo of the infected crop leaf to KrishiAgent. | Farmer shares their live location pin using the standard WhatsApp attachment menu. | KrishiAgent responds in under 15s with a localized text advisory and an audio voice note. |
+
+---
 
 ### ⚖️ Why This is Unique
 * **Traditional Agritech Failure:** Traditional apps feature dashboard interfaces, charts, and text tables that require high digital literacy, logins, and reading comprehension.
