@@ -283,6 +283,8 @@ To connect KrishiAgent to a live phone number:
 
 ## 🧪 The KrishiAgent Sandbox Simulator (Safety & Validation Testbed)
 
+![KrishiAgent Command Center Cockpit](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/real_simulator_cockpit.png)
+
 ### Why a Sandbox Simulator?
 Deploying autonomous AI agents directly to a live production WhatsApp number in agriculture carries significant risk. A single incorrect pesticide dosage recommendation, false disease diagnosis, or unsafe spray directive during adverse weather could lead to crop failure or pesticide pollution. 
 
