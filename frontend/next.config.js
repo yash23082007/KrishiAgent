@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -8,15 +10,15 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://127.0.0.1:8000/api/:path*', // proxy API requests to FastAPI backend
+        destination: `${BACKEND_URL}/api/:path*`, // proxy API requests to FastAPI backend
       },
       {
         source: '/webhook',
-        destination: 'http://127.0.0.1:8000/webhook', // proxy webhook calls
+        destination: `${BACKEND_URL}/webhook`, // proxy webhook calls
       },
       {
         source: '/static/:path*',
-        destination: 'http://127.0.0.1:8000/static/:path*', // proxy static assets (audio/images)
+        destination: `${BACKEND_URL}/static/:path*`, // proxy static assets (audio/images)
       }
     ];
   }

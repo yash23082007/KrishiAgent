@@ -135,7 +135,7 @@ export default function Page() {
       // Refresh case log
       loadData();
     } catch (e) {
-      alert("Simulation failed. Check if FastAPI backend is running on port 8000.");
+      alert("Simulation failed. Check if the FastAPI backend service is running and accessible.");
     } finally {
       setPipelineRunning(false);
     }

@@ -142,7 +142,7 @@ async def analyze_crop_image(image_url: str, strict_mode: bool = False) -> dict:
             prompt = STRICT_JSON_PROMPT + "\n" + VISION_PROMPT if strict_mode else VISION_PROMPT
 
             # 3. Call Gemini
-            model = genai.GenerativeModel("gemini-1.5-flash")
+            model = genai.GenerativeModel("gemini-2.5-flash")
             image_part = {
                 "mime_type": "image/jpeg",
                 "data": base64.b64encode(img_bytes).decode(),

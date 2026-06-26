@@ -94,7 +94,7 @@ def resolve_semantic_product(treatment_keywords: List[str]) -> str:
     # 3. LLM-based semantic matching fallback
     if IS_GEMINI_CONFIGURED:
         try:
-            model = genai.GenerativeModel("gemini-1.5-flash")
+            model = genai.GenerativeModel("gemini-2.5-flash")
             prompt = (
                 f"You are a semantic mapping agent. Map the following recommended treatment keywords from a crop diagnostic report: "
                 f"{json.dumps(treatment_keywords)} to exactly one of the available catalog product names listed below.\n\n"
