@@ -292,7 +292,10 @@ To mitigate this, KrishiAgent features a built-in **High-Fidelity Sandbox Simula
 3. **Test Under Adverse Conditions:** Evaluate if the Climate Agent's safety guardrails correctly block chemical spraying when weather APIs report high winds or rain.
 
 ### How the Sandbox Works
+![KrishiAgent Sandbox Simulator Mockup](https://raw.githubusercontent.com/yash23082007/KrishiAgent/main/whatsapp_video_ui_mockup.png)
+
 * **WhatsApp Webhook Emulation:** The simulator mocks real Meta webhook payloads (location pins, crop image URLs) and routes them through the FastAPI endpoints seamlessly.
+
 * **Offline Fallbacks (Mock Mode):** If API keys (like Gemini or Upstash) are not configured, the backend automatically runs in **Offline Fallback mode**. It serves structured mock datasets, allowing judges to run complete agent flows out-of-the-box.
 * **Telemetry Recording:** Every run compiles a full telemetry record—including the raw JSON payload, geodesic distances, local dealer contacts, and the step-by-step reasoning logs—and stores it in the local SQLite database.
 
