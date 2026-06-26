@@ -278,3 +278,27 @@ To connect KrishiAgent to a live phone number:
    * Subscribe to **`messages`** under Webhook Fields.
 3. **Register Live Credentials:** Populate `WHATSAPP_TOKEN` and `WHATSAPP_PHONE_NUMBER_ID` in your environment variables. 
 4. **Test:** Text a picture of a crop disease to your registered WhatsApp business number and receive the diagnosis directly on your phone!
+
+---
+
+## 🧪 The KrishiAgent Sandbox Simulator (Safety & Validation Testbed)
+
+### Why a Sandbox Simulator?
+Deploying autonomous AI agents directly to a live production WhatsApp number in agriculture carries significant risk. A single incorrect pesticide dosage recommendation, false disease diagnosis, or unsafe spray directive during adverse weather could lead to crop failure or pesticide pollution. 
+
+To mitigate this, KrishiAgent features a built-in **High-Fidelity Sandbox Simulator**. It acts as a safety-first testbed where developers and administrators can:
+1. **Validate Agent Logic:** Monitor how specialist agents reason and self-reflect before suggestions reach farmers.
+2. **Review Dialect Translators:** Verify translation quality for Marwari, Bhojpuri, Gujarati, Telugu, and Urdu dialect engines.
+3. **Test Under Adverse Conditions:** Evaluate if the Climate Agent's safety guardrails correctly block chemical spraying when weather APIs report high winds or rain.
+
+### How the Sandbox Works
+* **WhatsApp Webhook Emulation:** The simulator mocks real Meta webhook payloads (location pins, crop image URLs) and routes them through the FastAPI endpoints seamlessly.
+* **Offline Fallbacks (Mock Mode):** If API keys (like Gemini or Upstash) are not configured, the backend automatically runs in **Offline Fallback mode**. It serves structured mock datasets, allowing judges to run complete agent flows out-of-the-box.
+* **Telemetry Recording:** Every run compiles a full telemetry record—including the raw JSON payload, geodesic distances, local dealer contacts, and the step-by-step reasoning logs—and stores it in the local SQLite database.
+
+### Running a Diagnostic Test Case
+1. Start both backend and frontend servers.
+2. Open the dashboard at `http://localhost:3000`.
+3. In the **KrishiAgent Sandbox Simulator** card, choose a farmer name, select a dialect (e.g. Urdu, Telugu, or Marwari), select a leaf sample image, and click **"Kickoff 4-Agent Pipeline"**.
+4. The timeline updates in real-time. Once complete, click on the new row in the **Live Operations Feed** to open the case page and inspect the autonomous thought traces!
+
