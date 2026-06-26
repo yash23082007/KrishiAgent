@@ -1,5 +1,11 @@
-/** @type {import('next').NextConfig} */
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+let BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
+if (!BACKEND_URL) {
+  if (process.env.VERCEL_URL) {
+    BACKEND_URL = `https://${process.env.VERCEL_URL}/_/backend`;
+  } else {
+    BACKEND_URL = 'http://127.0.0.1:8000';
+  }
+}
 
 const nextConfig = {
   reactStrictMode: true,
