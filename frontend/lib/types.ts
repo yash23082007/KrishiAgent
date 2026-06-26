@@ -1,38 +1,20 @@
+export interface AgentReasoningDetail {
+  agent: string;
+  thinking: string;
+  action_log: string;
+  validation_status: string;
+  reflection: string;
+  retries: number;
+  latency_ms: number;
+  success: boolean;
+  error?: string | null;
+}
+
 export interface AgentTrace {
-  vision?: {
-    crop: string;
-    disease: string;
-    scientific_name?: string;
-    severity: string;
-    confidence: number;
-    affected_area_percent: number;
-    symptoms_observed: string[];
-    treatment_keywords: string[];
-    organic_alternatives: string[];
-    urgency: string;
-    if_untreated: string;
-  };
-  climate?: {
-    weather_safe: boolean;
-    weather_reason: string;
-    safe_spray_window: string;
-  };
-  economic?: {
-    treatment_name: string;
-    treatment_dose: string;
-    treatment_price: number;
-    subsidy_amount: number;
-    net_cost: number;
-    subsidy_scheme?: string;
-    dealer_name: string;
-    dealer_phone: string;
-    dealer_distance: number;
-  };
-  voice?: {
-    audio_url: string;
-    audio_duration: number;
-    translated_text: string;
-  };
+  vision?: AgentReasoningDetail;
+  climate?: AgentReasoningDetail;
+  economic?: AgentReasoningDetail;
+  voice?: AgentReasoningDetail;
 }
 
 export interface Case {

@@ -83,7 +83,7 @@ export default function Page() {
       const data = await fetchCases();
       setCases(data);
     } catch (e) {
-      print("Failed to fetch cases", e);
+      console.error("Failed to fetch cases", e);
     } finally {
       setLoading(false);
     }
@@ -238,8 +238,11 @@ export default function Page() {
                 >
                   <option value="marwari">Marwari (Rajasthan)</option>
                   <option value="bhojpuri">Bhojpuri (UP/Bihar)</option>
+                  <option value="telugu">Telugu (AP/Telangana)</option>
+                  <option value="urdu">Urdu</option>
                   <option value="gujarati">Gujarati</option>
                   <option value="hindi">Hindi Standard</option>
+                  <option value="english">English</option>
                 </select>
               </div>
               <div className="grid grid-cols-2 gap-2">

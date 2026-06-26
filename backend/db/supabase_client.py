@@ -1,9 +1,13 @@
 import os
 import sqlite3
 import httpx
+from typing import Optional
 from dotenv import load_dotenv
+from utils.logger import get_logger
 
 load_dotenv()
+
+logger = get_logger("supabase_client")
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
@@ -131,9 +135,9 @@ class SupabaseClient:
                     if response.status_code in [200, 201]:
                         return response.json()[0]
                     else:
-                        print(f"Supabase insert failed: {response.text}")
+                        logger.error(f"Supabase insert failed: {response.text}")
             except Exception as e:
-                print(f"Supabase insertion exception: {e}")
+                logger.error(f"Supabase insertion exception: {e}")
         
         # Local SQLite fallback
         conn = sqlite3.connect(DB_PATH)
@@ -185,7 +189,7 @@ class SupabaseClient:
                     if response.status_code == 200:
                         return response.json()
             except Exception as e:
-                print(f"Supabase get_cases exception: {e}")
+                logger.error(f"Supabase get_cases exception: {e}")
         
         # SQLite
         conn = sqlite3.connect(DB_PATH)
@@ -224,7 +228,7 @@ class SupabaseClient:
                         if rows:
                             return rows[0]
             except Exception as e:
-                print(f"Supabase get_case_by_id exception: {e}")
+                logger.error(f"Supabase get_case_by_id exception: {e}")
         
         conn = sqlite3.connect(DB_PATH)
         conn.row_factory = sqlite3.Row

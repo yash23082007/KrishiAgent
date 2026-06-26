@@ -1,8 +1,11 @@
 import os
 import httpx
 from dotenv import load_dotenv
+from utils.logger import get_logger
 
 load_dotenv()
+
+logger = get_logger("whatsapp")
 
 WHATSAPP_TOKEN = os.getenv("WHATSAPP_TOKEN")
 WHATSAPP_PHONE_NUMBER_ID = os.getenv("WHATSAPP_PHONE_NUMBER_ID")
@@ -28,12 +31,12 @@ async def send_text(phone: str, text: str) -> bool:
                 response = await client.post(url, json=payload, headers=headers)
                 if response.status_code in [200, 201]:
                     return True
-                print(f"WhatsApp send_text failed: {response.text}")
+                logger.error(f"WhatsApp send_text failed: {response.text}")
         except Exception as e:
-            print(f"WhatsApp send_text exception: {e}")
+            logger.error(f"WhatsApp send_text exception: {e}")
             
     # Mock/Local simulator output
-    print(f"[MOCK WHATSAPP SEND_TEXT] To: {phone} | Text: {text}")
+    logger.info(f"[MOCK WHATSAPP SEND_TEXT] To: {phone} | Text: {text}")
     return True
 
 async def send_audio(phone: str, audio_url: str) -> bool:
@@ -55,12 +58,12 @@ async def send_audio(phone: str, audio_url: str) -> bool:
                 response = await client.post(url, json=payload, headers=headers)
                 if response.status_code in [200, 201]:
                     return True
-                print(f"WhatsApp send_audio failed: {response.text}")
+                logger.error(f"WhatsApp send_audio failed: {response.text}")
         except Exception as e:
-            print(f"WhatsApp send_audio exception: {e}")
+            logger.error(f"WhatsApp send_audio exception: {e}")
             
     # Mock/Local simulator output
-    print(f"[MOCK WHATSAPP SEND_AUDIO] To: {phone} | Audio URL: {audio_url}")
+    logger.info(f"[MOCK WHATSAPP SEND_AUDIO] To: {phone} | Audio URL: {audio_url}")
     return True
 
 async def get_image_url(image_id: str) -> str:
@@ -74,7 +77,7 @@ async def get_image_url(image_id: str) -> str:
                 if response.status_code == 200:
                     return response.json().get("url")
         except Exception as e:
-            print(f"WhatsApp get_image_url exception: {e}")
+            logger.error(f"WhatsApp get_image_url exception: {e}")
             
     # For local testing, the image_id itself might be a direct web URL
     return image_id

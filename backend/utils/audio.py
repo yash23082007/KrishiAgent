@@ -2,8 +2,11 @@ import os
 import uuid
 import shutil
 from dotenv import load_dotenv
+from utils.logger import get_logger
 
 load_dotenv()
+
+logger = get_logger("audio")
 
 CLOUDINARY_CLOUD_NAME = os.getenv("CLOUDINARY_CLOUD_NAME")
 CLOUDINARY_API_KEY = os.getenv("CLOUDINARY_API_KEY")
@@ -35,13 +38,13 @@ def wav_to_ogg(input_wav_path: str, output_ogg_path: str) -> bool:
         sound.export(output_ogg_path, format="ogg", codec="libopus")
         return True
     except Exception as e:
-        print(f"pydub/ffmpeg audio conversion failed, falling back to simple file copy: {e}")
+        logger.error(f"pydub/ffmpeg audio conversion failed, falling back to simple file copy: {e}")
         try:
             # Just copy file to destination (WhatsApp and browsers might still be able to play it depending on browser capabilities)
             shutil.copy(input_wav_path, output_ogg_path)
             return True
         except Exception as e2:
-            print(f"Fallback file copy failed: {e2}")
+            logger.error(f"Fallback file copy failed: {e2}")
             return False
 
 def save_audio_locally(temp_audio_path: str) -> str:
@@ -67,7 +70,7 @@ def upload_audio(file_path: str) -> str:
             )
             return result.get("secure_url") or result.get("url")
         except Exception as e:
-            print(f"Cloudinary upload failed, falling back to local: {e}")
+            logger.error(f"Cloudinary upload failed, falling back to local: {e}")
             
     # Fallback: Save in FastAPI static folder and return simulated web link
     local_path = save_audio_locally(file_path)

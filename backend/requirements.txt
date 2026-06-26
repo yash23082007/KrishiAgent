@@ -9,3 +9,4 @@ pydub>=0.25.1
 python-multipart>=0.0.9
 cloudinary>=1.39.0
 python-dotenv>=1.0.1
+redis>=5.0.0

@@ -196,6 +196,26 @@ export default function CaseDetailsPage() {
                         ))}
                       </div>
                     </div>
+
+                    {/* Agent Thinking Trace */}
+                    {trace.vision && (
+                      <div className="mt-3 bg-zinc-950/80 rounded-xl p-3 border border-zinc-900 space-y-2">
+                        <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider flex items-center justify-between">
+                          <span>Agent 1 Reasoning Trace</span>
+                          {trace.vision.retries > 0 && (
+                            <span className="text-[9px] text-amber-400 bg-amber-400/10 px-1.5 py-0.5 rounded font-mono">
+                              {trace.vision.retries} retries
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-zinc-400 pl-1.5 border-l border-green-500/30 space-y-1">
+                          <p><span className="text-zinc-500 font-medium">Thought Process:</span> {trace.vision.thinking}</p>
+                          {trace.vision.reflection && (
+                            <p><span className="text-zinc-500 font-medium">Self-Reflection:</span> {trace.vision.reflection}</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -226,6 +246,26 @@ export default function CaseDetailsPage() {
                       <span className="text-zinc-500">Climate Reason:</span>
                       <p className="mt-0.5 text-zinc-400">{caseData.weather_reason}</p>
                     </div>
+
+                    {/* Agent Thinking Trace */}
+                    {trace.climate && (
+                      <div className="mt-3 bg-zinc-950/80 rounded-xl p-3 border border-zinc-900 space-y-2">
+                        <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider flex items-center justify-between">
+                          <span>Agent 2 Reasoning Trace</span>
+                          {trace.climate.retries > 0 && (
+                            <span className="text-[9px] text-amber-400 bg-amber-400/10 px-1.5 py-0.5 rounded font-mono">
+                              {trace.climate.retries} retries
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-zinc-400 pl-1.5 border-l border-blue-500/30 space-y-1">
+                          <p><span className="text-zinc-500 font-medium">Thought Process:</span> {trace.climate.thinking}</p>
+                          {trace.climate.reflection && (
+                            <p><span className="text-zinc-500 font-medium">Self-Reflection:</span> {trace.climate.reflection}</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -267,6 +307,26 @@ export default function CaseDetailsPage() {
                         </div>
                       </div>
                     </div>
+
+                    {/* Agent Thinking Trace */}
+                    {trace.economic && (
+                      <div className="mt-3 bg-zinc-950/80 rounded-xl p-3 border border-zinc-900 space-y-2">
+                        <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider flex items-center justify-between">
+                          <span>Agent 3 Reasoning Trace</span>
+                          {trace.economic.retries > 0 && (
+                            <span className="text-[9px] text-amber-400 bg-amber-400/10 px-1.5 py-0.5 rounded font-mono">
+                              {trace.economic.retries} retries
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-zinc-400 pl-1.5 border-l border-emerald-500/30 space-y-1">
+                          <p><span className="text-zinc-500 font-medium">Thought Process:</span> {trace.economic.thinking}</p>
+                          {trace.economic.reflection && (
+                            <p><span className="text-zinc-500 font-medium">Self-Reflection:</span> {trace.economic.reflection}</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -287,6 +347,26 @@ export default function CaseDetailsPage() {
                         &quot;{caseData.translated_text}&quot;
                       </p>
                     </div>
+
+                    {/* Agent Thinking Trace */}
+                    {trace.voice && (
+                      <div className="mt-3 bg-zinc-950/80 rounded-xl p-3 border border-zinc-900 space-y-2">
+                        <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider flex items-center justify-between">
+                          <span>Agent 4 Reasoning Trace</span>
+                          {trace.voice.retries > 0 && (
+                            <span className="text-[9px] text-amber-400 bg-amber-400/10 px-1.5 py-0.5 rounded font-mono">
+                              {trace.voice.retries} retries
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-zinc-400 pl-1.5 border-l border-purple-500/30 space-y-1">
+                          <p><span className="text-zinc-500 font-medium">Thought Process:</span> {trace.voice.thinking}</p>
+                          {trace.voice.reflection && (
+                            <p><span className="text-zinc-500 font-medium">Self-Reflection:</span> {trace.voice.reflection}</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,8 +1,12 @@
 import os
 import time
+from typing import Optional
 from dotenv import load_dotenv
+from utils.logger import get_logger
 
 load_dotenv()
+
+logger = get_logger("redis_client")
 
 # Upstash/Redis config
 REDIS_URL = os.getenv("REDIS_URL")
@@ -47,9 +51,9 @@ if REDIS_URL:
         redis_client = redis.from_url(REDIS_URL, decode_responses=True)
         # Ping check
         redis_client.ping()
-        print("Connected to Upstash Redis.")
+        logger.info("Connected to Upstash Redis.")
     except Exception as e:
-        print(f"Failed to connect to Upstash Redis, falling back to local memory: {e}")
+        logger.warning(f"Failed to connect to Upstash Redis, falling back to local memory: {e}")
         redis_client = InMemoryCache()
 else:
     redis_client = InMemoryCache()

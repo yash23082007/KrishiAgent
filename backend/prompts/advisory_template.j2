@@ -1,21 +1,23 @@
 Namaste {{ farmer_name or "kisan bhai" }}.
 
-Your {{ crop }} plant has {{ disease }} with {{ severity }} severity.
+Your {{ crop }} crop has been diagnosed with {{ disease }}, rated {{ severity }} severity.
 
 {% if weather_safe %}
-Weather is good for treatment right now.
+Weather conditions are currently favorable for treatment application. You can spray now.
 {% else %}
-Wait. {{ weather_reason or "Rain or strong wind is expected." }} Next safe spray window is {{ safe_spray_window or "tomorrow morning" }}.
+IMPORTANT WEATHER WARNING: {{ weather_reason or "Rain or strong wind is expected." }}
+Do NOT spray right now — the chemicals will be wasted.
+Next safe spray window: {{ safe_spray_window or "tomorrow morning" }}.
 {% endif %}
 
-Use {{ treatment_name }} — dosage is {{ treatment_dose }}.
-Net cost: approximately ₹{{ net_cost }} after government subsidy.
+Recommended treatment: {{ treatment_name }} at a dosage of {{ treatment_dose }}.
+Retail price: approximately {{ net_cost }} rupees after government subsidy.
 
-Buy from {{ dealer_name }}, {{ dealer_distance }}km from you. 
-Phone: {{ dealer_phone }}.
+Purchase from {{ dealer_name }}, located {{ dealer_distance }} kilometers from your location.
+Contact phone: {{ dealer_phone }}.
 
 {% if organic_alternatives %}
-Organic option: {{ organic_alternatives[0] }}.
+Organic alternative available: {{ organic_alternatives[0] }}.
 {% endif %}
 
-Act within {{ urgency or "48 hours" }}. Good luck with your harvest.
+Please act within {{ urgency or "48 hours" }} to prevent crop loss. Wishing you a good harvest.
